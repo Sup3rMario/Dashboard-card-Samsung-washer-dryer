@@ -1,4 +1,6 @@
 # Home Assistant Dashboard Card for Samsung washer-dryer
+![Card 02.PNG](https://github.com/Sup3rMario/Dashboard-card-Samsung-washer-dryer/blob/main/Card%2002.PNG)
+
 ## Overview
 My first attempt at creating a washing machine card for my Home Assistant dashboard for our Samsung washer-dryer.
 
@@ -30,4 +32,4 @@ You need three entities (since my HA is installed in German, the entities are in
 	
 7.) I'll then switch to the "Show Visual Editor" and change the layout from a column width of 12 to 6, save, and finish.
 
-## Have fun with it.
+### Have fun with it.
