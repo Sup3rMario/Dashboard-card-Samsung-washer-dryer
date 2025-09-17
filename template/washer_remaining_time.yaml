@@ -1,0 +1,22 @@
+sensor:
+  - unique_id: washer_remaining_time
+    name: 'washer remaining time'
+    state: >-
+      {% set completion_time = states("sensor.waschmaschine_fertigstellungszeit") %}
+      {% if completion_time != "unknown" and completion_time != "unavailable" %}
+        {% set completion_timestamp = as_timestamp(completion_time) %}
+        {% set current_timestamp = as_timestamp(now()) %}
+
+        {% if completion_timestamp > current_timestamp and not is_state("sensor.waschmaschine_vorgangsstatus", "none") %}
+          {% set remaining_seconds = (completion_timestamp - current_timestamp) | int %}
+          {% set total_minutes = ((remaining_seconds + 59) / 60) | int %}
+          {% set hours = (total_minutes // 60) %}
+          {% set minutes = (total_minutes % 60) %}
+          
+          {{ "%d:%02d" % (hours, minutes) }}
+        {% else %}
+          0
+        {% endif %}
+      {% else %}
+        -
+      {% endif %}
