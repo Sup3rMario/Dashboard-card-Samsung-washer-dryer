@@ -8,7 +8,7 @@ My first attempt at creating a washing machine card for my Home Assistant dashbo
 You must have connected the Samsung washing machine via the "SmartThings" integration.
 
 ## Preparation
-You need three entities (since my HA is installed in German, the entities are in German; please check the attached image)
+You need three entities from the "SmartThings" integration. (since my HA is installed in German, the entities are in German; please check the attached image)
   - a.) Stromversorgung =>  binary_sensor.waschmaschine_stromversorgung ... (this only displays the card when the washing machine is turned on)
   - b.) Vorgangsstatus  =>  sensor.waschmaschine_vorgangsstatus ... (this displays the respective icon for the washing machine's status)
   - c.) Fertigstellungszeit =>  sensor.waschmaschine_fertigstellungszeit ... (this is how the template calculates and formats the remaining time for display on the card)
