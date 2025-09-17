@@ -1,0 +1,56 @@
+type: conditional
+conditions:
+  - condition: state
+    entity: binary_sensor.waschmaschine_stromversorgung
+    state: "on"
+card:
+  type: picture-elements
+  elements:
+    - type: image
+      style:
+        left: 50%
+        top: 45%
+        width: 60%
+      entity: sensor.waschmaschine_vorgangsstatus
+      state_image:
+        air_wash: local/images/washer/air_wash.png
+        ai_rinse: local/images/washer/ai_rinse.png
+        ai_spin: local/images/washer/ai_spin.png
+        ai_wash: local/images/washer/ai_wash.png
+        cooling: local/images/washer/cooling.png
+        delay_wash: local/images/washer/delay_wash.png
+        drying: local/images/washer/drying_01.png
+        finish: local/images/washer/finish.png
+        none: local/images/washer/none.png
+        pre_wash: local/images/washer/pre_wash.png
+        rinse: local/images/washer/rinse.png
+        spin: local/images/washer/spin.png
+        wash: local/images/washer/wash.png
+        weight_sensing: local/images/washer/weight_sensing.png
+        wrinkle_prevent: local/images/washer/wrinkle_prevent.png
+        freeze_protection: local/images/washer/freeze_protection.png
+      tap_action:
+        action: none
+      hold_action:
+        action: none
+      double_tap_action:
+        action: none
+      image: local/images/washer/none.png
+    - type: state-label
+      style:
+        left: 12%
+        top: 89%
+        font-size: 1.5em
+        width: 20%
+      entity: sensor.waschmaschine_vorgangsstatus
+    - type: state-label
+      style:
+        left: 82%
+        top: 7%
+        font-size: 2em
+        color: "#99d6ff"
+      entity: sensor.washer_remaining_time
+  image: local/images/washer/washer_00.png
+  grid_options:
+    columns: 6
+    rows: auto
